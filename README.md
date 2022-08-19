@@ -69,7 +69,7 @@ The `New` view should:
 
 Try to figure out the Edit page to be the master full-stack super-programmer of Excalibur. 
 
-Think about the process as we did on module 2: it was a view that had a form, with the information already filled, but then when the user changed it, it send the new information to the database and the user was redirected to the detail's view again. You know how to do each one of these steps, you've just never done them together.
+Think about the process as we did on module 2: it was a view that had a form, with the information already filled, but then when the user changed it, it sent the new information to the database and the user was redirected to the detail's view again. You know how to do each one of these steps, you've just never done them together.
 
 Happy codi.. I mean, *with much love*,
 
