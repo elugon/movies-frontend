@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Movies frontend 🎬
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Well well well if it isn't your first full-stack MERN application little ironhacker... 😏 Couldn't be more proud of you! 
 
-## Available Scripts
+![](homer.gif)
 
-In the project directory, you can run:
+Anyway, let's get to work!
 
-### `npm start`
+This app was created with `create-react-app`, and it already has everything installed, so you just need to run:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm start
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Iteration 1: navigation 🛳
 
-### `npm test`
+Create a navbar with the following `NavLink`s:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Home
+- New
+- Go back
 
-### `npm run build`
+> 🚧 **We don't need a link** for the movie detail view, because it's dynamic (it needs an ID) and we will click on the movie itself to see the details. The same happens with the edit view. 🚧
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Whenever the user is changing the link, it should display the class `selected` (you already have it ready).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Iteration 2: Home 🏠
 
-### `npm run eject`
+The `Home` view:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- When the view `Home` first renders, it should make a call to the API, to the endpoint that gets all the movies. **Make sure your backend is running for this to work**.
+- It should save the data into a state.
+- It should display a list of Cards. Each Card should only display the image of the movie and the title, and the title should be a link to the detail ('movie/id').
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> 💡 Use the Card component that you have in the folder /components for this iteration.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Iteration 3: The movie page 🍿
 
-## Learn More
+The `Movie` view:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Should read the ID that is passed to it via parameters, using the `useParams` hook. It is already imported.
+- When it first renders, it should make a call to the API to retrieve information of that particular movie
+- It should store the information in a state
+- It should display the movie's information with all the details.
+- It should have two buttons: 
+1. One to **edit** the movie, that will be a link with the ID and it will redirect to the edit view.
+2. One to **delete** the movie, that will have an `onClick` event that will fire a `handleDelete` event. When this button is clicked, the movie should be deleted and then the user should be redirected to the Home view ('/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Iteration 4: The create movie 🪅
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The `New` view should:
 
-### Analyzing the Bundle Size
+- Have a state that will store the data of the new movie
+- Have a form, with an input with each one of the fields of the movie.
+- Have a `onSubmit` event that will make a call to the API and create the new movie. Then, the user will be redirected to the movie's detail view.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## BONUS: Edit movie? 🧐
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Try to figure out the Edit page. Keep in mind that it includes all the procedures of the above iterations: parameters, call to the API in the first useEffect, forms, handleSubmits, redirects... 
 
-### Advanced Configuration
+Happy codi.. I mean, *with much love*,
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+*Ale*
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
