@@ -74,9 +74,9 @@ The `New` view should:
 The `Edit view` has all the previous elements mushed into one view (*final boss*).
 
 - It should receive via params the ID of the movie we are editing 
-> Note: this comes form the Movie.jsx component. If you are not receiving the ID, the problem is there.
+> Note: this part comes form the Movie.jsx component. If you are not receiving the movie._id, the problem is there.
 - You should capture this parameter via the `useParams` hook
-- When the view first renders, it should make a call to the API to obtain the information of that particular movie (get single movie). This information should go into the state.
+- When the view first renders, it should make a call to the API to obtain the information of that particular movie (get single movie). This information should be stored into the state.
 - The view should display a form with the information of the movie (obtained from the state).
 - The view should have a `handleChange` function that will update the state when the user updates the information.
 - The view should have a `handleSubmit` function that will send the new information (stored in the state) to the backend and will redirect the user to the movie's detail view.
