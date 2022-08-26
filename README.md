@@ -71,7 +71,7 @@ The `New` view should:
 
 ## Iteration 5: Edit movie ✏️
 
-The `Edit view` has all the previous elements mushed into one view (*final boss*).
+The `Edit view` has all the previous elements together in one view (*final boss*).
 
 - It should receive via params the ID of the movie we are editing 
 > Note: this part comes form the Movie.jsx component. If you are not receiving the movie._id, the problem is there.
