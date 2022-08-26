@@ -13,9 +13,13 @@ npm install
 npm start
 ```
 
+💡 Make sure your `movies rest-api` is finished and all the routes tested with Postman. The backend must be **running** for the frontend to work.
+
+---
+
 ## Iteration 1: navigation 🛳
 
-Create a navbar with the following `NavLink`s:
+Complete the Navbar component with the following `NavLink`s:
 
 - Home
 - New
@@ -25,7 +29,7 @@ Create a navbar with the following `NavLink`s:
 
 Whenever the user is changing the link, it should display the class `selected` (you already have it ready in the `App.css` file).
 
-Remember to import it in the `App.js` file.
+Remember to import the navbar in the `App.js` file.
 
 ---
 
@@ -34,8 +38,8 @@ Remember to import it in the `App.js` file.
 The `Home` view:
 
 - When the view `Home` first renders, it should make a call to the API, to the endpoint that gets all the movies. **Make sure your backend is running for this to work**.
-- It should save the data into a state.
-- It should display a list of Cards. Each Card should only display the image of the movie and the title, and the title should be a link to the detail ('/movie/id').
+- It should save the data obtained into a state.
+- It should display a list of Cards. Each Card should only display the image of the movie and the title, and the title should be a link to the detail (this route is created as *'/movie/:id'*).
 
 > 💡 Use the Card component that you have in the folder /components for this iteration.
 
@@ -61,17 +65,23 @@ The `New` view should:
 
 - Have a state that will store the data of the new movie
 - Have a form, with an input with each one of the fields of the movie.
-- Have a `onSubmit` event that will make a call to the API and create the new movie. Then, the user will be redirected to the movie's detail view.
+- Have a `handleSubmit` event that will make a call to the API and create the new movie. Then, the user will be redirected to the movie's detail view.
 
 ---
 
-## BONUS: Edit movie? 🧐
+## Iteration 5: Edit movie ✏️
 
-Try to figure out the Edit page to be the master full-stack super-programmer of Excalibur. 
+The `Edit view` has all the previous elements mushed into one view (*final boss*).
 
-Think about the process as we did on module 2: it was a view that had a form, with the information already filled, but then when the user changed it, it sent the new information to the database and the user was redirected to the detail's view again. You know how to do each one of these steps, you've just never done them together.
+- It should receive via params the ID of the movie we are editing 
+> Note: this comes form the Movie.jsx component. If you are not receiving the ID, the problem is there.
+- You should capture this parameter via the `useParams` hook
+- When the view first renders, it should make a call to the API to obtain the information of that particular movie (get single movie). This information should go into the state.
+- The view should display a form with the information of the movie (obtained from the state).
+- The view should have a `handleChange` function that will update the state when the user updates the information.
+- The view should have a `handleSubmit` function that will send the new information (stored in the state) to the backend and will redirect the user to the movie's detail view.
 
-Happy codi.. I mean, *with much love*,
+💙 Happy codi.. I mean, *with much love*,
 
 *Ale*
 
