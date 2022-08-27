@@ -1,10 +1,11 @@
 import React from 'react'
+import Card from '../components/Card'
 
 export default function Home() {
+
   return (
     <div>
-      <h2>Home</h2>
-      {/* Should display a list of all the movies */}
+     <Card />
     </div>
   )
 }

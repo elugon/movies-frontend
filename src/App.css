@@ -1,3 +1,8 @@
 .selected {
   color: green;
 }
+
+.movie-size{
+  height: 450px;
+  width: 300px;
+}
